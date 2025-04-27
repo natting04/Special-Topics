@@ -15,13 +15,13 @@ cp /home/netadmin/1.dnsForward/templates/etc/bind/named.conf.options /etc/bind/n
 cp /home/netadmin/1.dnsForward/templates/etc/bind/named.conf.default-zones /etc/bind/named.conf.default-zones
 
 # 4. Create the zone file
-#cp /etc/bind/db.local /etc/bind/db.ozy.cns
-#nano /etc/bind/db.ozy.cns
-cp /home/netadmin/1.dnsForward/templates/etc/bind/db.ozy.cns /etc/bind/db.ozy.cns
+#cp /etc/bind/db.local /etc/bind/db.nat.cns
+#nano /etc/bind/db.nat.cns
+cp /home/netadmin/1.dnsForward/templates/etc/bind/db.nat.cns /etc/bind/db.nat.cns
 
 # 5. Verify Setup
 named-checkconf
-named-checkzone ozy.cns /etc/bind/db.ozy.cns
+named-checkzone nat.cns /etc/bind/db.nat.cns
 
 # 6. Reload Bind9 service
 systemctl reload bind9
